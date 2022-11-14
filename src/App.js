@@ -1,12 +1,15 @@
-import { SignIn } from './components/userComponents/SignIn';
-import { SignUp } from './components/userComponents/SignUp';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { SignIn } from "./components/userComponents/SignIn";
+import { SignUp } from "./components/userComponents/SignUp";
 
 function App() {
   return (
-    <>
-      <SignUp />
-      <SignIn />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/sign-in' element={<SignIn />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

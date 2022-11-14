@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function SignIn() {
   return (
@@ -34,9 +35,9 @@ export function SignIn() {
           >
             Sign In
           </button>
-          <a href="#" className="underline">
+          <Link to="/sign-up" className="underline">
             Don't have an account? Sign Up!
-          </a>
+          </Link>
         </div>
       </form>
     </div>
