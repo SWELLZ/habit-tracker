@@ -11,7 +11,7 @@ export function SignUp() {
         <label className="w-4/5">
           <p>Email:</p>
           <input
-            className="w-full bg-amber-50 py-1 px-1 rounded-sm shadow-sm"
+            className="w-full bg-amber-50 py-1 px-1 rounded-sm shadow-sm outline-none border border-transparent focus:border-sky-700"
             type="email"
             required
           />
@@ -20,7 +20,7 @@ export function SignUp() {
         <label className="w-4/5">
           <p>Password:</p>
           <input
-            className="w-full bg-amber-50 py-1 px-1 rounded-sm shadow-sm"
+            className="w-full bg-amber-50 py-1 px-1 rounded-sm shadow-sm outline-none border border-transparent focus:border-sky-700"
             type="password"
             required
           />
@@ -29,7 +29,7 @@ export function SignUp() {
         <label className="w-4/5">
           <p>Confirm Password:</p>
           <input
-            className="w-full bg-amber-50 py-1 px-1 rounded-sm shadow-sm"
+            className="w-full bg-amber-50 py-1 px-1 rounded-sm shadow-sm outline-none border border-transparent focus:border-sky-700"
             type="password"
             required
           />
