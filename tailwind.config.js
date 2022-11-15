@@ -1,10 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx}"
-  ],
+  content: ["./src/**/*.{js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        translateLeft: {
+          "0%, 100%": { transform: "translateX(0%)" },
+        },
+      },
+      animation: {
+        left: "translateLeft 1s ease",
+      },
+    },
   },
   plugins: [],
-}
+};
