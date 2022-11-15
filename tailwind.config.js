@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       keyframes: {
         translateLeft: {
-          "0%, 100%": { transform: "translateX(0%)" },
+          "0%": {left: '100%'},
+          "100%": {left: 0}
         },
       },
       animation: {

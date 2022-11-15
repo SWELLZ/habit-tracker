@@ -12,8 +12,8 @@ export function Nav() {
   const toggleVisible = () => {
     setDropdownToggled(
       dropdown
-        ? "w-screen h-screen absolute left-full top-0 bg-amber-200 flex flex-col justify-evenly items-center z-50 animate-left" //HIDDEN
-        : "w-screen h-screen absolute left-0 top-0 bg-amber-200 flex flex-col justify-evenly items-center z-50" //SHOWING
+        ? "w-screen h-screen left-full absolute top-0 bg-amber-200 flex flex-col justify-evenly items-center z-50 animate-left" //HIDDEN
+        : "w-screen h-screen absolute left-0 top-0 bg-amber-200 flex flex-col justify-evenly items-center z-50 animate-left" //SHOWING
     );
     setDropdown(!dropdown);
   };
