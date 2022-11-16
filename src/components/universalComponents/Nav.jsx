@@ -2,42 +2,31 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SignIn } from "../userComponents/SignIn";
 import { SignUp } from "../userComponents/SignUp";
+import "./Nav.css";
 
 export function Nav() {
-  const [dropdown, setDropdown] = useState(false);
-  const [dropdownToggled, setDropdownToggled] = useState(
-    "w-screen h-screen absolute left-full top-0 bg-amber-200 flex flex-col justify-evenly items-center"
-  );
+  const [isToggled, setIsToggled] = useState(false);
 
-  const toggleVisible = () => {
-    setDropdownToggled(
-      dropdown
-        ? "w-screen h-screen left-full absolute top-0 bg-amber-200 flex flex-col justify-evenly items-center z-50 animate-left" //HIDDEN
-        : "w-screen h-screen absolute left-0 top-0 bg-amber-200 flex flex-col justify-evenly items-center z-50 animate-left" //SHOWING
-    );
-    setDropdown(!dropdown);
+  const toggleSlider = () => {
+    setIsToggled(!isToggled);
   };
 
   return (
-    <nav
-      className={`flex justify-between absolute top-0 w-full items-center h-[70px] bg-amber-200 overflow-hidden ${
-        dropdown ? "overflow-visible" : ""
-      }`}
-    >
+    <nav className="flex justify-between absolute top-0 w-full items-center h-[70px] bg-amber-200 overflow-hidden z-50">
       <div className="ml-4">
-        <Link to="/" className="text-lg font-bold">
+        <Link to="/" className="text-2xl font-bold">
           HT
         </Link>
       </div>
-      <div className="mr-4 flex gap-4">
-        <div className={dropdownToggled}>
+      <div className="mr-4 flex gap-4 items-center">
+        <div className={`flex gap-4 ${isToggled ? 'nav-toggled' : ''} nav-slider`}>
           <Link
             className="underline hover:no-underline"
             to="/sign-up"
             element={<SignUp />}
           >
             Sign Up
-          </Link>{" "}
+          </Link>
           <Link
             className="underline hover:no-underline"
             to="/sign-in"
@@ -47,23 +36,15 @@ export function Nav() {
           </Link>
         </div>
         <button
-          className="flex flex-col justify-center items-center gap-1"
-          onClick={toggleVisible}
+          onClick={toggleSlider}
+          className={`flex flex-col gap-1 justify-between h-[20px] transition-all sm:hidden ${
+            isToggled ? "toggled" : ""
+          }`}
         >
-          <div className="w-[25px] h-[3px] bg-black"></div>
-          <div className="w-[25px] h-[3px] bg-black"></div>
-          <div className="w-[25px] h-[3px] bg-black"></div>
+          <div className="w-[25px] bg-black h-[3px] burger-1 transition-all"></div>
+          <div className="w-[25px] bg-black h-[3px] burger-2 transition-all"></div>
+          <div className="w-[25px] bg-black h-[3px] burger-3 transition-all"></div>
         </button>
-        {dropdown && (
-          <button
-            className="flex flex-col justify-center items-center gap-1 absolute z-50"
-            onClick={toggleVisible}
-          >
-            <div className="w-[25px] h-[3px] bg-black"></div>
-            <div className="w-[25px] h-[3px] bg-black"></div>
-            <div className="w-[25px] h-[3px] bg-black"></div>
-          </button>
-        )}
       </div>
     </nav>
   );
